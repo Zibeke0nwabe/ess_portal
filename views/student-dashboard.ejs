@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Welcome, <%= student.name %></h2>
+
+  <h3>Available Live Classes:</h3>
+  <ul>
+    <% classes.forEach(cls => { %>
+      <li>
+        <%= cls.subject %> by <%= cls.teacherName %> | 
+        <a href="/class/<%= cls.roomId %>">Join</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

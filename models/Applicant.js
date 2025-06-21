@@ -1,0 +1,41 @@
+const mongoose = require('mongoose');
+
+const applicantSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  name: { type: String, required: true },
+  surname: { type: String },
+  password: { type: String, required: true },
+  studentNumber: { type: String, unique: true },
+  idNumber: { type: String, required: true, unique: true },
+  DOB: { type: String, required: true },
+  marital: { type: String, required: true },
+  language: { type: String },
+  gender: { type: String },
+  email: { type: String, required: true, unique: true },
+  mobile: { type: String, required: true, unique: true },
+  altmobile: { type: String },
+  province: { type: String },
+  town: { type: String },
+  Suburb: { type: String },
+  addressCode: { type: String, required: true },
+  education: { type: String, required: true },
+  eduYear: { type: String },
+  school: { type: String },
+  idCopy: { type: String },
+  certificateCopy: { type: String },
+  parentID: { type: String },
+  mathsLevel: { type: String },
+  scienceLevel: { type: String },
+  accountingLevel: { type: String },
+  geographyLevel: { type: String },
+  lifeScienceLevel: { type: String },
+  businessStudiesLevel: { type: String },
+  economicsLevel: { type: String },
+  agriculturalScienceLevel: { type: String },
+  selectedSubjects: [{ type: String }],
+  status: { type: String, default: 'Pending' },
+  resetCode: { type: String },
+  resetCodeExpiry: { type: Date }
+});
+
+module.exports = mongoose.model('Applicant', applicantSchema, 'ekhayaApplicants');

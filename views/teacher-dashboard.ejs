@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Welcome, <%= teacher.username %></h2>
+  <form id="createClassForm">
+    <input type="text" id="subject" placeholder="Subject" required />
+    <button type="submit">Create Class</button>
+  </form>
+
+  <h3>Live Classes:</h3>
+  <ul id="liveClasses">
+    <% classes.forEach(cls => { %>
+      <li>
+        <%= cls.subject %> | <a href="/class/<%= cls.roomId %>">Join</a>
+      </li>
+    <% }) %>
+  </ul>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/teacher.js"></script>
+</body>
+</html>

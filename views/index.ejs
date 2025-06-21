@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ESS Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+    opacity: 1 !important;
+  }
+</style>
+
+<body class=" text-gray-800">
+
+<!-- Top Banner -->
+<div class="bg-[#000026] text-white text-sm px-4 py-2 flex justify-between items-center flex-wrap m-2">
+  <!-- Left: Announcements -->
+  <span class="text-gray-200 whitespace-nowrap">
+    Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships
+  </span>
+
+  <!-- Right: Contact Details -->
+  <div class="flex items-center gap-6 whitespace-nowrap text-gray-200 text-xs mt-2 md:mt-0">
+    <span class="flex items-center gap-1">
+      <i class="fas fa-map-marker-alt text-white"></i>
+      Luna Apartments, 477 Anton Lembede St
+    </span>
+    <span class="flex items-center gap-1">
+      <i class="fas fa-phone-alt text-white"></i>
+      +27 (72) 343-8377
+    </span>
+    <span class="flex items-center gap-1">
+      <i class="fas fa-envelope text-white"></i>
+      ekhayaSmartScholars@gmail.com
+    </span>
+  </div>
+</div>
+<!-- Navbar -->
+<nav class="bg-white text-gray-800 shadow-md">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="/images/Logo.png" alt="School Logo" class="h-16 w-38">
+      </div>
+
+      <!-- Links -->
+      <div class="hidden md:flex space-x-6 items-center text-sm font-medium">
+        <a href="#home" class="hover:text-[#000026] transition">Home</a>
+        <a href="#about" class="hover:text-[#000026] transition">About Us</a> 
+        <a href="#mission" class="hover:text-[#000026] transition">Mission</a>
+
+        <!-- Dropdown -->
+        <div class="relative group">
+          <button class="hover:text-[#000026] transition inline-flex items-center space-x-1">
+            <span>Departments</span>
+            <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute hidden group-hover:block bg-white border text-sm rounded-md mt-2 shadow-md py-2 w-48 z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Science</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mathematics</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Humanities</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Technology</a>
+          </div>
+        </div>
+
+        <a href="#events" class="hover:text-[#000026] transition">Events</a>
+        <a href="#contact" class="hover:text-[#000026] transition">Contact</a>
+      </div>
+
+      <!-- Search + Login -->
+      <div class="hidden md:flex items-center space-x-4">
+        <div class="relative">
+          <input type="text" placeholder="Search..." class="pl-4 pr-10 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[#000026]" />
+          <svg class="w-4 h-4 absolute right-3 top-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+          </svg>
+        </div>
+        <a href="/login" class="text-sm font-medium px-4 py-2 bg-[#000026] text-white rounded-md hover:bg-[#1a1a4c] transition"> 
+          <i class="fas fa-sign-in-alt"></i>
+          Login
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 py-4 bg-white border-t text-sm space-y-3">
+    <a href="#home" class="block text-gray-700 hover:text-[#000026]">Home</a>
+    <a href="#about" class="block text-gray-700 hover:text-[#000026]">About Us</a>
+    <a href="#mission" class="block text-gray-700 hover:text-[#000026]">Mission</a>
+    <div>
+      <p class="text-gray-500">Departments</p>
+      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Science</a>
+      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Mathematics</a>
+      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Humanities</a>
+      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Technology</a>
+    </div>
+    <a href="#events" class="block text-gray-700 hover:text-[#000026]">Events</a>
+    <a href="#contact" class="block text-gray-700 hover:text-[#000026]">Contact</a>
+    <a href="/login" class="block text-gray-700 hover:text-[#000026]">Login</a>
+    <div class="relative mt-2">
+      <input type="text" placeholder="Search..." class="w-full pl-4 pr-10 py-2 border rounded-md focus:ring-[#000026] focus:outline-none" />
+      <svg class="w-4 h-4 absolute right-3 top-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</nav>
+
+<!-- Main Content -->
+<main id="home" class="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 md:grid-cols-10 gap-6">
+
+<div class="md:col-span-8 relative h-[480px] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+
+  <!-- Slides Wrapper -->
+  <div id="carousel-slide" class="relative w-full h-full">
+    <!-- Image Background -->
+    <img id="carousel-image" src="" alt="Slide Image"
+      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 rounded-xl" />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Slide Content -->
+    <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-16 text-white z-10">
+      <h1 id="carousel-title" class="text-3xl md:text-4xl font-bold mb-2 animate-fadeIn"></h1>
+      <p id="carousel-desc" class="text-sm md:text-lg max-w-xl text-gray-100 animate-fadeIn delay-150"></p>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button onclick="prevSlide()" class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-white/20 text-white hover:bg-white/30 p-3 rounded-full z-20 shadow-lg">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button onclick="nextSlide()" class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white/20 text-white hover:bg-white/30 p-3 rounded-full z-20 shadow-lg">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+<!-- Quick Links Section (smaller and cleaner) -->
+<div class="md:col-span-2 p-2 md:p-0 ml-4">
+  <h2 class="text-lg font-bold text-[#000026] mb-4 flex items-center space-x-2">
+    <i class="fas fa-bolt text-[#000026]"></i>
+    <span>Quick Links</span>
+  </h2>
+
+  <ul class="space-y-4 text-sm">
+    <li>
+      <a href="/universities" class="flex items-center space-x-3 hover:text-[#000026] transition">
+        <i class="fas fa-university"></i>
+        <span>Universities</span>
+      </a>
+    </li>
+    <li>
+      <a href="/news" class="flex items-center space-x-3 hover:text-[#000026] transition">
+        <i class="fas fa-newspaper"></i>
+        <span>ESS News</span>
+      </a>
+    </li>
+    <li>
+      <a href="/bursaries" class="flex items-center space-x-3 hover:text-[#000026] transition">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>Bursaries</span>
+      </a>
+    </li>
+    <li>
+      <a href="/management" class="flex items-center space-x-3 hover:text-[#000026] transition">
+        <i class="fas fa-users-cog"></i>
+        <span>Our Management</span>
+      </a>
+    </li>
+    <li>
+      <a href="/live-classes" class="flex items-center space-x-3 hover:text-[#000026] transition">
+        <i class="fas fa-video"></i>
+        <span>Live Classes</span>
+      </a>
+    </li>
+  </ul>
+  <!-- Ad Section Below Quick Links -->
+  <div class="mt-8 bg-[#f9f9f9] border border-gray-200 rounded-lg p-4 shadow-sm text-center">
+    <p class="text-xs text-gray-400 uppercase mb-2 tracking-wide">Sponsored</p>
+    <div class="flex items-center justify-center h-24 bg-white border border-dashed border-gray-300 rounded-md">
+      <span class="text-gray-400 text-sm">Ad space – coming soon</span>
+    </div>
+  </div>
+</div>
+</main>
+<section class="max-w-7xl mx-auto px-4 md:px-6 py-10 grid grid-cols-1 md:grid-cols-12 gap-6">
+
+  <!-- Welcome Section: spans more -->
+  <div id="about" class="md:col-span-9 bg-white rounded-lg p-6 space-y-6">
+    <!-- Top: Title and Subtitle -->
+    <div>
+      <h2 class="text-2xl font-bold text-[#000026]">Welcome to ESS Portal</h2>
+      <div class="w-20 h-1 bg-[#000026] mt-2 mb-4"></div>
+      <p class="text-sm text-gray-600">
+        Empowering learners with opportunity, innovation, and community.</p>
+    </div>
+
+    <!-- Bottom: Image Left, Text Right -->
+    <div class="flex flex-col md:flex-row items-start gap-6">
+      <img src="https://th.bing.com/th/id/OIP.Hq9auDxarRKpgMDIRi9MVAHaE7?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" alt="Campus" class="w-full md:w-1/2 rounded-md shadow-sm object-cover h-52">
+      <p class="text-gray-700 text-sm leading-relaxed">
+        <span class="text-2xl font-bold text-[#000026]">About Ekhaya Smart Scholars</span> <br>
+        At ESS, our mission is to provide an inclusive and forward-thinking educational environment. 
+        Through modern facilities, expert faculty, and a supportive community, we prepare students 
+        to excel in their academic and personal lives. We believe in innovation-driven learning and a 
+        strong focus on holistic development.
+      </p>
+    </div>
+  </div>
+
+  <!-- News Section: smaller span -->
+  <div class="md:col-span-3 bg-white rounded-lg p-6">
+    <h3 class="text-xl font-semibold text-[#000026] mb-4 flex items-center space-x-2">
+      <span>Latest News</span>
+    </h3>
+    <ul class="space-y-4 text-sm text-gray-700">
+      <li class="border-b pb-2">
+        <strong class="block text-[#000026]">Online Orientation this Friday</strong>
+        <span class="text-gray-500">All new students must attend. Check your email for alerts about class links.</span>
+      </li>
+      <li class="border-b pb-2">
+        <strong class="block text-[#000026]">Scholarship Applications Open</strong>
+        <span class="text-gray-500">Submit before October 15th to be considered.</span>
+      </li>
+      <li>
+        <strong class="block text-[#000026]">Digital Learning Upgrade Complete</strong>
+        <span class="text-gray-500">Our new platform is now live with improved performance and access.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- Mission Section -->
+<section id="mission" class="bg-[#000026] py-12 m-4 rounded-md">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+    <!-- Left: Text -->
+    <div class="text-white space-y-4">
+      <h2 class="text-3xl font-bold">Our Mission</h2>
+      <div class="w-20 h-1 bg-white mb-4"></div>
+      <p class="text-sm leading-relaxed">
+        At ESS, we aim to nurture a generation of innovative thinkers, compassionate leaders, and life-long learners. 
+        Our mission is rooted in academic excellence, character building, and creating inclusive opportunities for all.
+        <br /><br />
+        Through a balance of traditional values and modern practices, we provide our students with the tools they need 
+        to thrive in a rapidly evolving world.
+      </p>
+    </div>
+
+    <!-- Right: Image -->
+    <div>
+      <img 
+        src="https://atlantablackstar.com/wp-content/uploads/2014/01/black-children-in-school.jpg" 
+        alt="Mission Image" 
+        class="w-full h-64 object-cover rounded-lg shadow-md"
+      />
+    </div>
+  </div>
+</section>
+<!-- Departments Section -->
+<section id="departments" class="bg-white py-12">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <h2 class="text-3xl font-bold text-[#000026] mb-6">Our Departments</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="department-grid">
+      <!-- Department Cards -->
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center">
+        <i class="fas fa-square-root-alt text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Mathematics</h4>
+      </div>
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center">
+        <i class="fas fa-flask text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Physical Sciences</h4>
+      </div>
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center">
+        <i class="fas fa-leaf text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Life Sciences</h4>
+      </div>
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center">
+        <i class="fas fa-calculator text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Accounting</h4>
+      </div>
+
+      <!-- Hidden Departments -->
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center hidden" id="extra-dept">
+        <i class="fas fa-briefcase text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Business Studies</h4>
+      </div>
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center hidden" id="extra-dept">
+        <i class="fas fa-chart-line text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Economics</h4>
+      </div>
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center hidden" id="extra-dept">
+        <i class="fas fa-desktop text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Computer Applications</h4>
+      </div>
+      <div class="bg-[#f9f9f9] p-4 rounded-lg shadow text-center hidden" id="extra-dept">
+        <i class="fas fa-globe-africa text-3xl text-[#000026] mb-2"></i>
+        <h4 class="text-lg font-semibold text-[#000026]">Geography</h4>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="mt-6 text-center">
+      <button onclick="toggleDepartments()" id="viewMoreBtn"
+        class="bg-[#000026] text-white px-6 py-2 rounded hover:bg-[#1a1a4c] transition">
+        View More
+      </button>
+    </div>
+  </div>
+</section>
+<!-- ESS Video Preview Section -->
+<section id="events" class="py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+
+      <!-- Heading -->
+      <h2 class="text-3xl md:text-4xl font-bold text-[#000026] mb-4">Welcome to Ekhaya Smart Scholars</h2>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-10">
+        We are dedicated to empowering students and supporting them every step of their academic journey.
+        Each letter in the word <strong>EKHAYA</strong> represents a core value we uphold in our mission to help students succeed.
+      </p>
+    <!-- Video Container -->
+    <div class="relative w-full aspect-video rounded-lg shadow-lg overflow-hidden">
+      
+      <!-- Actual Video -->
+      <video id="essVideo" class="w-full h-full object-cover hidden" controls>
+        <source src="/videos/ess2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Thumbnail Overlay -->
+      <div id="videoOverlay" onclick="playVideo()" class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white cursor-pointer transition hover:bg-black/70">
+        <!-- Thumbnail Image -->
+        <img src="/videos/ess1.png" alt="ESS Preview" class="absolute inset-0 w-full h-full object-cover -z-10" />
+
+        <!-- Text -->
+        <h3 class="text-2xl md:text-3xl font-bold mb-2 drop-shadow-md">Experience the ESS Journey</h3>
+        <p class="text-sm md:text-base mb-6">Click to watch our story in action</p>
+
+        <!-- Play Button -->
+        <i class="fas fa-play-circle text-6xl text-white hover:text-gray-300 transition"></i>
+      </div>
+    </div>
+    <div class="text-left mt-10 text-gray-700 space-y-4 text-sm md:text-base leading-relaxed">
+      <p>
+        At <strong>EKHAYA Smart Scholars</strong>, we believe in celebrating every student's progress and dedication. 
+        That’s why we issue <strong>End-of-Term Certificates</strong> to acknowledge their hard work and achievements.
+      </p>
+      <p>
+        Our mission goes beyond just teaching—it’s about <strong>transforming lives through education</strong>. 
+        We are committed to working hand in hand with schools to cultivate a culture of excellence, perseverance, and continuous improvement among learners.
+      </p>
+    </div>
+  </div>
+</section>
+ <!-- Esgela Team Section -->
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6 py-6">
+
+    <!-- Text Content -->
+    <div class="md:w-1/2 space-y-5 text-sm text-gray-700 leading-relaxed">
+      <h2 class="text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-users text-gray-500"></i> Powered by the Esgela Team
+      </h2>
+
+      <p class="flex items-start gap-2">
+        <i class="fas fa-code text-gray-500 mt-1"></i>
+        <span>
+          This project was crafted by the <strong class="text-black">Esgela Team</strong> — a passionate group committed to digital innovation for social good.
+        </span>
+      </p>
+
+      <p class="flex items-start gap-2">
+        <i class="fas fa-user-graduate text-gray-500 mt-1"></i>
+      <span>
+        Esgela is an online coding bootcamp where aspiring developers collaborate, learn, and contribute to projects like this one — combining education with real-world development experience.
+      </span>
+      </p>
+
+      <p class="flex items-start gap-2">
+        <i class="fas fa-heart text-gray-500 mt-1"></i>
+        <span>
+          Esgela is driven by the dream of teaching software development for free, starting in <strong class="text-black">Port St. Johns</strong>.
+        </span>
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-6 pt-4 text-lg text-gray-500">
+        <a href="https://facebook.com/esgela" target="_blank" class="hover:text-black">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/esgela" target="_blank" class="hover:text-black">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://linkedin.com/company/esgela" target="_blank" class="hover:text-black">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/esgela" target="_blank" class="hover:text-black">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+
+      <!-- Logo / Image -->
+      <div class="md:w-1/2 flex justify-center">
+        <img src="/images/esgela.jpg" alt="Esgela Logo" class="w-60 h-auto object-contain rounded-md" />
+      </div>
+
+  </div>
+
+<!-- Contact Us Section -->
+<section id="contact" class="relative text-white py-10 px-6 overflow-hidden min-h-[400px] bg-cover bg-center"
+         style="background-image: url('/images/hero.jpg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-sm z-0 rounded-md"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+
+    <!-- Left: Contact Info -->
+    <div class="space-y-6">
+      <h2 class="text-3xl font-bold">Contact Us</h2>
+      <p class="text-sm text-gray-200 max-w-md">
+        We are dedicated to empowering students and support them in every step of their academic journey.
+      </p>
+
+      <div class="space-y-4 text-sm">
+        <div class="flex items-center gap-3">
+          <i class="fas fa-map-marker-alt text-white bg-[#ffffff22] p-2 rounded-full"></i>
+          <span>Luna Apartments, 477 Anton Lembede St, Durban Central, Durban</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-phone-alt text-white bg-[#ffffff22] p-2 rounded-full"></i>
+          <span>+27 (72) 343-8377</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-envelope text-white bg-[#ffffff22] p-2 rounded-full"></i>
+          <span>ekhayasmartscholars@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Transparent Form with Icons -->
+    <div class="p-6 rounded-xl w-full max-w-md mx-auto">
+      <h3 class="text-lg font-semibold mb-4">Send Message</h3>
+      <form action="/contact" method="POST" class="space-y-4 text-sm">
+
+        <!-- Full Name -->
+        <div class="relative">
+          <i class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-300"></i>
+          <input type="text" name="name" placeholder="Full Name" required
+            class="w-full pl-10 pr-3 py-2 bg-transparent border border-gray-300 rounded text-white placeholder-gray-300 focus:ring-2 focus:ring-white focus:outline-none" />
+        </div>
+
+        <!-- Email -->
+        <div class="relative">
+          <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-300"></i>
+          <input type="email" name="email" placeholder="Email" required
+            class="w-full pl-10 pr-3 py-2 bg-transparent border border-gray-300 rounded text-white placeholder-gray-300 focus:ring-2 focus:ring-white focus:outline-none" />
+        </div>
+
+        <!-- Message -->
+        <div class="relative">
+          <i class="fas fa-comment-dots absolute left-3 top-4 text-gray-300"></i>
+          <textarea name="message" rows="3" placeholder="Type your Message..." required
+            class="w-full pl-10 pr-3 pt-3 bg-transparent border border-gray-300 rounded text-white placeholder-gray-300 focus:ring-2 focus:ring-white focus:outline-none resize-none"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-white text-[#000026] py-2 rounded hover:bg-[#1a1a4c] hover:text-white transition font-medium">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer style="background: #000026;" class=" text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">About Ekhaya Smart Scholars</h3>
+                <p class="text-gray-400 text-sm">We are dedicated to empowering students and support them in every step of their academic journey. Each Letter in the word EKHAYA represents a core value that we uphold in our mission to helping students succeed.</p>
+                <div class="mt-4">
+                <a href="#" class="text-blue-600 hover:text-white mr-4"><i class="fab fa-facebook-f md:text-1xl"></i></a>
+                <a href="#" class="text-blue-400 hover:text-white mr-4"><i class="fab fa-linkedin md:text-1xl"></i></a>
+                <a href="#" class="hover:text-white mr-4"><i class="fab fa-git md:text-1xl"></i></a>
+                <a href="#" class="text-red-600 hover:text-white mr-4"><i class="fab fa-youtube md:text-1xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <p class="text-gray-400 text-sm">Have questions or need support? Reach out to our team:</p>
+                <ul class="mt-4">
+                <li><i class="fas fa-envelope mr-2 text-sm"></i>ekhayasmartscholars@gmail.com</li>
+                <li><i class="fas fa-phone mr-2 text-sm"></i> +27 (72) 343-8377</li></ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Subscribe</h3>
+                <p class="text-gray-400 mb-4 text-sm">Subscribe to our newsletter for updates on new courses and promotions.</p>
+                <form id="subscribeForm">
+                  <input type="email" name="email" id="email" placeholder="Enter Your email"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-black text-black" required />
+                  <button type="submit" style="background-image: url('/images/background.jpg')"
+                      class="btnSubmit bg-white text-black font-semibold rounded-md px-4 py-2 hover:bg-gray-800 focus:outline-none focus:bg-gray-800 transition duration-300 ease-in-out">Subscribe</button>
+              </form>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Developers</h3>
+                  <img src="/images/esgela.jpg" alt="Esgela Logo" class="w-16 h-auto p-2">
+          
+                <p class="text-gray-300 text-sm mb-2 mt-2">Proudly Designed by <a href="https://esgela.onrender.com" class="underline hover:text-white">Esgela.co.za</a> – a learning platform by Onwabe Zibeke.</p>
+                <p class="text-gray-300 text-sm">Esgela empowers youth through technology education in Eastern Cape.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Script to play video -->
+<script>
+  function playVideo() {
+    const video = document.getElementById("essVideo");
+    const overlay = document.getElementById("videoOverlay");
+    overlay.style.display = "none";
+    video.classList.remove("hidden");
+    video.play();
+  }
+</script>
+
+
+<!-- Toggle Script -->
+<script>
+  function toggleDepartments() {
+    const hiddenCards = document.querySelectorAll('#extra-dept');
+    const btn = document.getElementById('viewMoreBtn');
+    hiddenCards.forEach(card => card.classList.toggle('hidden'));
+    btn.textContent = btn.textContent === 'View More' ? 'View Less' : 'View More';
+  }
+</script>
+
+<script>
+  const slides = [
+    {
+      img: "https://th.bing.com/th/id/R.4204bff964513401ae5252e412d3b221?rik=KKug5IqF0UtCRQ&riu=http%3a%2f%2fhoranshealth.ie%2fcdn%2fshop%2farticles%2fback-school-children-are-happy-smiling-return-school-with-their-friends.jpg%3fv%3d1723122749&ehk=5uET1iaWR2OgpZFcn3a%2bYApgGEMS3KItwR3raP6i4mc%3d&risl=&pid=ImgRaw&r=0",
+      title: "Learn From Anywhere",
+      desc: "Access high-quality educational content wherever you are, whenever you need it."
+    },
+    {
+      img: "https://img.freepik.com/premium-photo/elementaryage-children-friends-school-classroom-back-school-concept-summer-course-concept_1039005-3065.jpg",
+      title: "Interactive Virtual Classes",
+      desc: "Engage in live discussions, quizzes, and group activities to deepen understanding."
+    },
+    {
+      img: "https://th.bing.com/th/id/OIP.gT9wIbVmPsPkuFgsSSAW0QHaEO?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3",
+      title: "Track Your Progress",
+      desc: "View your learning stats, complete modules, and earn achievements as you grow."
+    }
+  ];
+
+  let slideIndex = 0;
+  const imageEl = document.getElementById('carousel-image');
+  const titleEl = document.getElementById('carousel-title');
+  const descEl = document.getElementById('carousel-desc');
+
+  function showSlide(index) {
+    imageEl.classList.remove('animate-fadeIn');
+    void imageEl.offsetWidth; // force reflow to restart animation
+
+    imageEl.src = slides[index].img;
+    imageEl.classList.add('opacity-100', 'animate-fadeIn');
+    titleEl.textContent = slides[index].title;
+    descEl.textContent = slides[index].desc;
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  showSlide(slideIndex);
+  setInterval(nextSlide, 8000);
+</script>
+
+
+
+</body>
+</html>
