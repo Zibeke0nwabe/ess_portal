@@ -23,33 +23,54 @@
     animation: fadeIn 1s ease-in-out;
     opacity: 1 !important;
   }
+  @keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
 </style>
 
 <body class=" text-gray-800">
 
 <!-- Top Banner -->
-<div class="bg-[#000026] text-white text-sm px-4 py-2 flex justify-between items-center flex-wrap m-2">
-  <!-- Left: Announcements -->
-  <span class="text-gray-200 whitespace-nowrap">
-    Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships
-  </span>
+<div class="bg-[#000026] text-white text-sm px-4 py-3 w-full">
+  <!-- Small Screens: Marquee -->
+  <div class="block md:hidden overflow-hidden whitespace-nowrap relative">
+    <div class="animate-marquee inline-block text-gray-200">
+      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships | <i class="fas fa-map-marker-alt text-white"></i> Luna Apartments, 477 Anton Lembede St | <i class="fas fa-phone-alt text-white"></i> +27 (72) 343-8377 | <i class="fas fa-envelope text-white"></i> ekhayaSmartScholars@gmail.com
+    </div>
+  </div>
 
-  <!-- Right: Contact Details -->
-  <div class="flex items-center gap-6 whitespace-nowrap text-gray-200 text-xs mt-2 md:mt-0">
-    <span class="flex items-center gap-1">
-      <i class="fas fa-map-marker-alt text-white"></i>
-      Luna Apartments, 477 Anton Lembede St
+  <!-- Medium and Up: Full Banner -->
+  <div class="hidden md:flex justify-between items-center flex-wrap gap-y-2 px-4">
+    <!-- Left: Announcements -->
+    <span class="text-gray-200">
+      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships 
     </span>
-    <span class="flex items-center gap-1">
-      <i class="fas fa-phone-alt text-white"></i>
-      +27 (72) 343-8377
-    </span>
-    <span class="flex items-center gap-1">
-      <i class="fas fa-envelope text-white"></i>
-      ekhayaSmartScholars@gmail.com
-    </span>
+
+    <!-- Right: Contact Details -->
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-200 text-xs">
+      <span class="flex items-center gap-1">
+        <i class="fas fa-map-marker-alt text-white"></i>
+        Luna Apartments, 477 Anton Lembede St
+      </span>
+      <span class="flex items-center gap-1">
+        <i class="fas fa-phone-alt text-white"></i>
+        +27 (72) 343-8377
+      </span>
+      <span class="flex items-center gap-1">
+        <i class="fas fa-envelope text-white"></i>
+        ekhayaSmartScholars@gmail.com
+      </span>
+    </div>
   </div>
 </div>
+
 <!-- Navbar -->
 <nav class="bg-white text-gray-800 shadow-md">
   <div class="max-w-7xl mx-auto px-4">
@@ -132,41 +153,38 @@
 <!-- Main Content -->
 <div class="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row gap-8">
 
-  <!-- Filter Sidebar -->
-  <aside class="md:w-1/4">
-    <h2 class="text-xl font-semibold mb-4">Filter by</h2>
-    
-    <!-- Province Filter -->
-    <div class="mb-6">
-      <h3 class="font-medium mb-2">Location (Province)</h3>
-      <div class="space-y-2">
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2 text-[#000026]"> Gauteng
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2 text-[#000026]"> Western Cape
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2 text-[#000026]"> KwaZulu-Natal
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2 text-[#000026]"> Eastern Cape
-        </label>
-        <!-- Add more provinces as needed -->
-      </div>
-    </div>
-
-    <!-- Category Filter (optional) -->
-    <div class="mb-6">
-      <h3 class="font-medium mb-2">University Type</h3>
+<!-- Filter Sidebar -->
+<aside class="hidden md:block md:w-1/4">
+  <h2 class="text-xl font-semibold mb-4">Filter by</h2>
+  
+  <!-- Province Filter -->
+  <div class="mb-6">
+    <h3 class="font-medium mb-2">Location (Province)</h3>
+    <div class="space-y-2">
       <label class="flex items-center">
-        <input type="checkbox" class="mr-2 text-[#000026]"> Public
+        <input type="checkbox" class="mr-2 text-[#000026]"> Gauteng
       </label>
       <label class="flex items-center">
-        <input type="checkbox" class="mr-2 text-[#000026]"> Private
+        <input type="checkbox" class="mr-2 text-[#000026]"> Western Cape
+      </label>
+      <label class="flex items-center">
+        <input type="checkbox" class="mr-2 text-[#000026]"> KwaZulu-Natal
+      </label>
+      <label class="flex items-center">
+        <input type="checkbox" class="mr-2 text-[#000026]"> Eastern Cape
       </label>
     </div>
-  </aside>
+  </div>
+  <div class="mb-6">
+    <h3 class="font-medium mb-2">University Type</h3>
+    <label class="flex items-center">
+      <input type="checkbox" class="mr-2 text-[#000026]"> Public
+    </label>
+    <label class="flex items-center">
+      <input type="checkbox" class="mr-2 text-[#000026]"> Private
+    </label>
+  </div>
+</aside>
 
   <!-- University Cards -->
   <section class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -2,39 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ESS Portal</title>
-
-  <!-- TailwindCSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-  <style>
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-in-out;
-      opacity: 1 !important;
-    }
-  </style>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="text-gray-800">
+<style>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-  <!-- Top Banner -->
-  <div class="bg-[#000026] text-white text-sm px-4 py-2 flex justify-between items-center flex-wrap m-2">
-    <span class="text-gray-200 whitespace-nowrap">
-      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+    opacity: 1 !important;
+  }
+  @keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+</style>
+
+<body class=" text-gray-800">
+
+<!-- Top Banner -->
+<div class="bg-[#000026] text-white text-sm px-4 py-3 w-full">
+  <!-- Small Screens: Marquee -->
+  <div class="block md:hidden overflow-hidden whitespace-nowrap relative">
+    <div class="animate-marquee inline-block text-gray-200">
+      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships | <i class="fas fa-map-marker-alt text-white"></i> Luna Apartments, 477 Anton Lembede St | <i class="fas fa-phone-alt text-white"></i> +27 (72) 343-8377 | <i class="fas fa-envelope text-white"></i> ekhayaSmartScholars@gmail.com
+    </div>
+  </div>
+
+  <!-- Medium and Up: Full Banner -->
+  <div class="hidden md:flex justify-between items-center flex-wrap gap-y-2 px-4">
+    <!-- Left: Announcements -->
+    <span class="text-gray-200">
+      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships 
     </span>
 
-    <div class="flex items-center gap-6 whitespace-nowrap text-gray-200 text-xs mt-2 md:mt-0">
+    <!-- Right: Contact Details -->
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-200 text-xs">
       <span class="flex items-center gap-1">
         <i class="fas fa-map-marker-alt text-white"></i>
         Luna Apartments, 477 Anton Lembede St
@@ -49,6 +69,7 @@
       </span>
     </div>
   </div>
+</div>
 
   <!-- Navbar -->
   <nav class="bg-white text-gray-800 shadow-md">

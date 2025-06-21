@@ -23,33 +23,54 @@
     animation: fadeIn 1s ease-in-out;
     opacity: 1 !important;
   }
+  @keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
 </style>
 
 <body class=" text-gray-800">
 
 <!-- Top Banner -->
-<div class="bg-[#000026] text-white text-sm px-4 py-2 flex justify-between items-center flex-wrap m-2">
-  <!-- Left: Announcements -->
-  <span class="text-gray-200 whitespace-nowrap">
-    Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships
-  </span>
+<div class="bg-[#000026] text-white text-sm px-4 py-3 w-full">
+  <!-- Small Screens: Marquee -->
+  <div class="block md:hidden overflow-hidden whitespace-nowrap relative">
+    <div class="animate-marquee inline-block text-gray-200">
+      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships | <i class="fas fa-map-marker-alt text-white"></i> Luna Apartments, 477 Anton Lembede St | <i class="fas fa-phone-alt text-white"></i> +27 (72) 343-8377 | <i class="fas fa-envelope text-white"></i> ekhayaSmartScholars@gmail.com
+    </div>
+  </div>
 
-  <!-- Right: Contact Details -->
-  <div class="flex items-center gap-6 whitespace-nowrap text-gray-200 text-xs mt-2 md:mt-0">
-    <span class="flex items-center gap-1">
-      <i class="fas fa-map-marker-alt text-white"></i>
-      Luna Apartments, 477 Anton Lembede St
+  <!-- Medium and Up: Full Banner -->
+  <div class="hidden md:flex justify-between items-center flex-wrap gap-y-2 px-4">
+    <!-- Left: Announcements -->
+    <span class="text-gray-200">
+      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships 
     </span>
-    <span class="flex items-center gap-1">
-      <i class="fas fa-phone-alt text-white"></i>
-      +27 (72) 343-8377
-    </span>
-    <span class="flex items-center gap-1">
-      <i class="fas fa-envelope text-white"></i>
-      ekhayaSmartScholars@gmail.com
-    </span>
+
+    <!-- Right: Contact Details -->
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-200 text-xs">
+      <span class="flex items-center gap-1">
+        <i class="fas fa-map-marker-alt text-white"></i>
+        Luna Apartments, 477 Anton Lembede St
+      </span>
+      <span class="flex items-center gap-1">
+        <i class="fas fa-phone-alt text-white"></i>
+        +27 (72) 343-8377
+      </span>
+      <span class="flex items-center gap-1">
+        <i class="fas fa-envelope text-white"></i>
+        ekhayaSmartScholars@gmail.com
+      </span>
+    </div>
   </div>
 </div>
+
 <!-- Navbar -->
 <nav class="bg-white text-gray-800 shadow-md">
   <div class="max-w-7xl mx-auto px-4">
@@ -178,7 +199,7 @@
   </div>
 </div>
 <!-- Quick Links Section (smaller and cleaner) -->
-<div class="md:col-span-2 p-2 md:p-0 ml-4">
+<div class="hidden md:block md:col-span-2 p-2 md:p-0 ml-4">
   <h2 class="text-lg font-bold text-[#000026] mb-4 flex items-center space-x-2">
     <i class="fas fa-bolt text-[#000026]"></i>
     <span>Quick Links</span>
