@@ -1,0 +1,53 @@
+<section id="gallery" class="py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Gallery</h2>
+
+    <!-- Image Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.0xrRuAzAowkE4Ne9NamzIgHaDV?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" alt="Gallery" class="w-full h-64 object-cover rounded-md shadow-md">
+      <img src="https://th.bing.com/th/id/OIP.9JhdVNEl1dhDDY2TpNo5owHaEK?w=329&h=184&c=7&r=0&o=5&pid=1.7" alt="Gallery" class="w-full h-64 object-cover rounded-md shadow-md">
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+      <img src="https://th.bing.com/th/id/OIP.RygDhOcstLYhaJnaeJHHWgHaEK?w=274&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Gallery" class="w-full h-40 object-cover rounded-md shadow-md">
+      <img src="https://th.bing.com/th/id/OIP.m1X6WfW5XvZSsA63rohx-AHaE7?w=259&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Gallery" class="w-full h-40 object-cover rounded-md shadow-md">
+      
+      <!-- Last thumbnail with +N -->
+      <div class="relative cursor-pointer" onclick="openGalleryModal()">
+        <img src="https://th.bing.com/th/id/OIP.WZMWRCCPeJfQ01nGZxVQfwHaEK?w=292&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Gallery" class="w-full h-40 object-cover rounded-md shadow-md">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-semibold rounded-md">
+          +2
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center px-4">
+    <div class="bg-white rounded-lg max-w-4xl w-full p-6 relative overflow-y-auto max-h-[90vh]">
+
+      <button onclick="closeGalleryModal()" class="absolute top-2 right-4 text-gray-600 hover:text-black text-2xl">&times;</button>
+      
+      <h3 class="text-xl font-semibold mb-4">Full Gallery</h3>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.0xrRuAzAowkE4Ne9NamzIgHaDV?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" class="w-full h-40 object-cover rounded-md">
+        <img src="https://th.bing.com/th/id/OIP.9JhdVNEl1dhDDY2TpNo5owHaEK?w=329&h=184&c=7&r=0&o=5&pid=1.7" class="w-full h-40 object-cover rounded-md">
+        <img src="https://th.bing.com/th/id/OIP.RygDhOcstLYhaJnaeJHHWgHaEK?w=274&h=180&c=7&r=0&o=7&pid=1.7&rm=3" class="w-full h-40 object-cover rounded-md">
+        <img src="https://th.bing.com/th/id/OIP.m1X6WfW5XvZSsA63rohx-AHaE7?w=259&h=180&c=7&r=0&o=7&pid=1.7&rm=3" class="w-full h-40 object-cover rounded-md">
+        <img src="https://th.bing.com/th/id/OIP.WZMWRCCPeJfQ01nGZxVQfwHaEK?w=292&h=180&c=7&r=0&o=7&pid=1.7&rm=3" class="w-full h-40 object-cover rounded-md">
+        <img src="https://th.bing.com/th/id/OIP.Q1TAacTZi_hdieW-YBmIFQHaEE?w=319&h=180&c=7&r=0&o=7&pid=1.7&rm=3" class="w-full h-40 object-cover rounded-md">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function openGalleryModal() {
+    document.getElementById('galleryModal').classList.remove('hidden');
+  }
+
+  function closeGalleryModal() {
+    document.getElementById('galleryModal').classList.add('hidden');
+  }
+</script>

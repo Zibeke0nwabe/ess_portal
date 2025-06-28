@@ -37,138 +37,10 @@
 
 <body class=" text-gray-800">
 
-<!-- Top Banner -->
-<div class="bg-[#000026] text-white text-sm  py-3 w-full">
-  <!-- Small Screens: Marquee -->
-  <div class="block md:hidden overflow-hidden whitespace-nowrap relative">
-    <div class="animate-marquee inline-block text-gray-200">
-      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships | <i class="fas fa-map-marker-alt text-white"></i> Luna Apartments, 477 Anton Lembede St | <i class="fas fa-phone-alt text-white"></i> +27 (72) 343-8377 | <i class="fas fa-envelope text-white"></i> ekhayaSmartScholars@gmail.com
-    </div>
-  </div>
-
-  <!-- Medium and Up: Full Banner -->
-  <div class="hidden md:flex justify-between items-center flex-wrap gap-y-2 px-4">
-    <!-- Left: Announcements -->
-    <span class="text-gray-200">
-      Upcoming Test Series | Admissions Open | New Departments Launched | Explore Scholarships 
-    </span>
-
-    <!-- Right: Contact Details -->
-    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-200 text-xs">
-      <span class="flex items-center gap-1">
-        <i class="fas fa-map-marker-alt text-white"></i>
-        Luna Apartments, 477 Anton Lembede St
-      </span>
-      <span class="flex items-center gap-1">
-        <i class="fas fa-phone-alt text-white"></i>
-        +27 (72) 343-8377
-      </span>
-      <span class="flex items-center gap-1">
-        <i class="fas fa-envelope text-white"></i>
-        ekhayaSmartScholars@gmail.com
-      </span>
-    </div>
-  </div>
-</div>
-
-<!-- Navbar -->
-<nav class="bg-white text-gray-800 shadow-md">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="flex justify-between items-center h-16">
-
-      <!-- Logo -->
-      <div class="flex items-center space-x-3">
-        <img src="/images/Logo.png" alt="School Logo" class="h-16 w-38">
-      </div>
-
-      <!-- Links -->
-      <div class="hidden md:flex space-x-6 items-center text-sm font-medium">
-        <a href="#home" class="hover:text-[#000026] transition">Home</a>
-        <a href="#about" class="hover:text-[#000026] transition">About Us</a> 
-        <a href="#mission" class="hover:text-[#000026] transition">Mission</a>
-
-        <!-- Dropdown -->
-        <div class="relative group">
-          <button class="hover:text-[#000026] transition inline-flex items-center space-x-1">
-            <span>Departments</span>
-            <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="absolute hidden group-hover:block bg-white border text-sm rounded-md mt-2 shadow-md py-2 w-48 z-10">
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Science</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mathematics</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Humanities</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Technology</a>
-          </div>
-        </div>
-
-        <a href="#events" class="hover:text-[#000026] transition">Events</a>
-        <a href="#contact" class="hover:text-[#000026] transition">Contact</a>
-      </div>
-
-      <!-- Search + Login -->
-      <div class="hidden md:flex items-center space-x-4">
-        <div class="relative">
-          <input type="text" placeholder="Search..." class="pl-4 pr-10 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[#000026]" />
-          <svg class="w-4 h-4 absolute right-3 top-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
-          </svg>
-        </div>
-        <a href="/login" class="text-sm font-medium px-4 py-2 bg-[#000026] text-white rounded-md hover:bg-[#1a1a4c] transition"> 
-          <i class="fas fa-sign-in-alt"></i>
-          Login
-        </a>
-      </div>
-
-      <!-- Mobile Button -->
-      <div class="md:hidden flex items-center">
-        <button id="mobile-menu-button" class="focus:outline-none">
-          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden px-4 py-4 bg-white border-t text-sm space-y-3">
-    <a href="#home" class="block text-gray-700 hover:text-[#000026]">Home</a>
-    <a href="#about" class="block text-gray-700 hover:text-[#000026]">About Us</a>
-    <a href="#mission" class="block text-gray-700 hover:text-[#000026]">Mission</a>
-    <div>
-      <p class="text-gray-500">Departments</p>
-      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Science</a>
-      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Mathematics</a>
-      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Humanities</a>
-      <a href="#" class="block pl-4 text-gray-700 hover:text-[#000026]">Technology</a>
-    </div>
-    <a href="#events" class="block text-gray-700 hover:text-[#000026]">Events</a>
-    <a href="#contact" class="block text-gray-700 hover:text-[#000026]">Contact</a>
-    <a href="/login" class="block text-gray-700 hover:text-[#000026]">Login</a>
-    <div class="relative mt-2">
-      <input type="text" placeholder="Search..." class="w-full pl-4 pr-10 py-2 border rounded-md focus:ring-[#000026] focus:outline-none" />
-      <svg class="w-4 h-4 absolute right-3 top-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
-        viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
-      </svg>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('mobile-menu-button').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-  </script>
-</nav>
-
+  <!--topBanner partial -->
+  <%- include('partials/topBanner') %>
+  <!--navbar partial -->
+  <%- include('partials/navbar') %>
 <!-- Main Content -->
 <main id="home" class="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 md:grid-cols-10 gap-6">
 
@@ -467,7 +339,7 @@
       </div>
 
   </div>
-
+<%- include('partials/gallery') %>
 <!-- Contact Us Section -->
 <section id="contact" class="relative text-white py-10 px-6 overflow-hidden min-h-[400px] bg-cover bg-center"
          style="background-image: url('/images/hero.jpg');">
